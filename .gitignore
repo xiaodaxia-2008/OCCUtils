@@ -12,3 +12,6 @@ occutils.cmake
 test_occutils
 build
 .vscode
+# pixi environments
+.pixi
+*.egg-info

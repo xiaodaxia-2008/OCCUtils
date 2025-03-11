@@ -1,0 +1,13 @@
+[project]
+authors = ["xiaodaxia <xiaozisheng2008@qq.com>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "OCCUtils"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+occt = "*"
+boost-cpp = ">=1.85.0,<2"

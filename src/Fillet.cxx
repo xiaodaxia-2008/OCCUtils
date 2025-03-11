@@ -13,7 +13,7 @@ TopoDS_Shape OCCUtils::Fillet::FilletAll(const TopoDS_Shape& shape, double radiu
     TopTools_IndexedMapOfShape edges;
     TopExp::MapShapes (shape, TopAbs_EDGE, edges);
 
-    for (size_t i = 1; i <= edges.Extent(); i++) {
+    for (int i = 1; i <= edges.Extent(); i++) {
         const TopoDS_Edge& edge = TopoDS::Edge(edges(i));
         filletMaker.Add(radius, edge);
     }
@@ -28,7 +28,7 @@ TopoDS_Shape OCCUtils::Fillet::FilletAdaptiveRadius(const TopoDS_Shape& shape, s
     TopTools_IndexedMapOfShape edges;
     TopExp::MapShapes (shape, TopAbs_EDGE, edges);
 
-    for (size_t i = 1; i <= edges.Extent(); i++) {
+    for (int i = 1; i <= edges.Extent(); i++) {
         const TopoDS_Edge& edge = TopoDS::Edge(edges(i));
         double radius = radiusByEdge(edge);
         if(!std::isnan(radius)) { // NaN => dont fillet this edge!
