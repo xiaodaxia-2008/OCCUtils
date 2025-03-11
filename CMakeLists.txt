@@ -4,7 +4,6 @@ project(occutils)
 
 option(occutils_BUILD_TESTS "Build tests" OFF)
 
-find_package(Boost COMPONENTS unit_test_framework CONFIG REQUIRED)
 find_package(OpenCASCADE COMPONENTS FoundationClasses ModelingData ModelingAlgorithms
   Visualization ApplicationFramework DataExchange REQUIRED)
 
@@ -47,8 +46,8 @@ target_link_libraries(occutils PUBLIC Boost::headers
   ${OpenCASCADE_DataExchange_LIBRARIES}
 )
 
-# find_package(Boost COMPONENTS system filesystem unit_test_framework REQUIRED)
 if(occutils_BUILD_TESTS)
+  find_package(Boost COMPONENTS unit_test_framework CONFIG REQUIRED)
   add_executable(test_occutils
     tests/TestLine.cpp
   )
